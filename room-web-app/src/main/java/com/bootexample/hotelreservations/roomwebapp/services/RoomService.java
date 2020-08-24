@@ -16,7 +16,7 @@ public class RoomService {
         }
     }
 
-    public static List<Room> getAllRooms () {
+    public List<Room> getAllRooms() {
         return roomList;
     }
 
