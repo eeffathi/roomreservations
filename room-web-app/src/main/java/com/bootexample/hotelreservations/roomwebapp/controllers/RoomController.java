@@ -12,13 +12,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/rooms")
 public class RoomController {
-    private static List<Room> roomList = new ArrayList<>();
-
-    static {
-        for (int i=0 ; i<10 ; i++) {
-            roomList.add(new Room(i, "Room " + i, "R" + i, "Q"));
-        }
-    }
 
     @GetMapping
     public String getAllRooms(Model model) {
