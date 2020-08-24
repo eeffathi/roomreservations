@@ -4,15 +4,17 @@ public class Room {
     private long id;
     private  String name;
     private String info;
+    private String number;
 
     public Room() {
         super();
     }
 
-    public Room(long id, String name, String info) {
+    public Room(long id, String name, String number, String info) {
         this.id = id;
         this.name = name;
         this.info = info;
+        this.number = number;
     }
 
     public long getId() {
@@ -21,6 +23,14 @@ public class Room {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getName() {
