@@ -48,4 +48,14 @@ public class Room {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }
