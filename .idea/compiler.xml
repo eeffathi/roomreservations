@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="room-web-app" />
+        <module name="room-clr-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="room-clr-app" target="1.8" />
       <module name="room-web-app" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="room-clr-app" options="-parameters" />
       <module name="room-web-app" options="-parameters" />
     </option>
   </component>
