@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Component
 public class RoomCleaningClr implements CommandLineRunner {
     private static final Logger LOGGER = LoggerFactory.getLogger(RoomCleaningClr.class);
@@ -24,7 +27,16 @@ public class RoomCleaningClr implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         LOGGER.info(url);
-        Room[] roomObjects = this.restTemplate.getForObject(url, Room[].class);
-        LOGGER.info( "Room objects : " + String.valueOf(roomObjects));
+
+        try {
+            Room[] roomObjects = this.restTemplate.getForObject(url, Room[].class);
+            //        LOGGER.info( "Room objects : " + String.valueOf(roomObjects));
+            List<Room> rooms = Arrays.asList(roomObjects);
+            rooms.forEach(System.out::println);
+        }
+        catch (Exception exception) {
+            System.out.println("Exception occurred with the connection of at the json consumer"+
+                    "maybe the json producer isn`t running");
+        }
     }
 }
