@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 public class RoomCleaningClr implements CommandLineRunner {
     private static final Logger LOGGER = LoggerFactory.getLogger(RoomCleaningClr.class);
     RestTemplate restTemplate = new RestTemplate();
-    String url = "localhost:8080/api/rooms";
+    String url = "http://localhost:8080/api/rooms";
 
 //    public RoomCleaningClr() {
 //        super();

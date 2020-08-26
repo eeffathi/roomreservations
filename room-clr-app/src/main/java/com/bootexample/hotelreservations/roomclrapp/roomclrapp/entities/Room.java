@@ -7,7 +7,7 @@ public class Room {
     private String number;
 
     public Room() {
-        super();
+
     }
 
     public Room(long id, String name, String number, String info) {
