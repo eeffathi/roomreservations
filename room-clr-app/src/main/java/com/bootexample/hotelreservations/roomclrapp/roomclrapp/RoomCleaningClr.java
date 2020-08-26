@@ -19,18 +19,12 @@ public class RoomCleaningClr implements CommandLineRunner {
     RestTemplate restTemplate = new RestTemplate();
     String url = "http://localhost:8080/api/rooms";
 
-//    public RoomCleaningClr() {
-//        super();
-//        this.restTemplate = new RestTemplate();
-//    }
-
     @Override
     public void run(String... args) throws Exception {
         LOGGER.info(url);
 
         try {
             Room[] roomObjects = this.restTemplate.getForObject(url, Room[].class);
-            //        LOGGER.info( "Room objects : " + String.valueOf(roomObjects));
             List<Room> rooms = Arrays.asList(roomObjects);
             rooms.forEach(System.out::println);
         }
